@@ -1,5 +1,5 @@
 //
-// Navbars
+// Navbar
 // --------------------------------------------------
 
 
@@ -43,7 +43,46 @@
   border-width: 0;
   border-bottom-width: 2px;
   &.btn-sm {
-    margin-top: 14.5px;
+    margin-top: 14.5px; // vertical align the buttons with the navbar height
     margin-bottom: 14.5px;
   }
 }
+
+
+
+//
+// Jumbotron
+// --------------------------------------------------
+
+.jumbotron-home {
+  padding-top: 38px;
+  padding-bottom: 38px;
+  margin-bottom: 0;
+  background-color: @gray-light;
+
+  .pp-tagline-img {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+@container-tablet:             (640px + @grid-gutter-width);
+//** For `@screen-sm-min` and up.
+@container-sm:                 @container-tablet;
+
+// Medium screen / desktop
+@container-desktop:            (720px + @grid-gutter-width);
+//** For `@screen-md-min` and up.
+@container-md:                 @container-desktop;
+
+// Large screen / wide desktop
+@container-large-desktop:      (810px + @grid-gutter-width);
+//** For `@screen-lg-min` and up.
+@container-lg:                 @container-large-desktop;
