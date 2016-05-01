@@ -262,6 +262,62 @@
 
 
 //
+// Pagination (multiple pages)
+// --------------------------------------------------
+
+.pagination-articles {
+  text-align: center;
+} 
+.pagination {
+  margin-bottom: 30px;
+  border-radius: 0;
+
+  > li {
+    > a,
+    > span {
+      background-color: @gray-lighter;
+      border:none;
+      margin-left: -1px;
+    }
+    > a[aria-label] {
+      font-size: 22px;
+      margin-right: 8px;
+    }
+    > a[aria-label="Next"],
+    > a[aria-label="Previous"] {
+      padding: 1px 10px 0 9px;
+    }
+    > a[aria-label="Next"] {
+      margin-left: 8px;
+    }
+    &:first-child {
+      > a,
+      > span {
+        margin-left: 0;
+        padding: 1px 4px 0 3px;
+        .border-left-radius(0);
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+        padding: 1px 4px 0 3px;
+        .border-right-radius(0);
+      }
+    }
+  }
+
+  > li > a,
+  > li > span {
+    &:hover,
+    &:focus {
+      background-color: #fff;
+    }
+  }
+}
+
+
+//
 // Footer
 // --------------------------------------------------
 
