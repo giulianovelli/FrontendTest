@@ -12,7 +12,6 @@
   border-width: 0;
 }
 
-
 // Navbar nav links
 //
 // Builds on top of the `.nav` components with its own modifier class to make
@@ -26,8 +25,6 @@
 
   > li > a.grayed-out {
     color: @text-color;
-
-
   }
 }
 
@@ -35,16 +32,23 @@
 .navbar-right {
   margin-right: 0; //reset negative margin to make space for right aligned button
 }
-.navbar-btn-right {
-  float: right!important; //!important necessary because of bootstrap conventions
-  margin-right: -15px; //add negative margin to align with the grid
-  padding-top: 8px;
-  padding-bottom: 8px;
-  border-width: 0;
-  border-bottom-width: 2px;
-  &.btn-sm {
-    margin-top: 14.5px; // vertical align the buttons with the navbar height
-    margin-bottom: 14.5px;
+.navbar-btn-right.btn-sm {
+ margin: 0;
+}
+
+
+@media (min-width: @screen-sm-max) {
+  .navbar-btn-right {
+    float: right!important; //!important necessary because of bootstrap conventions
+    margin-right: -15px; //add negative margin to align with the grid
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-width: 0;
+    border-bottom-width: 2px;
+    &.btn-sm {
+      margin-top: 14.5px; // vertical align the buttons with the navbar height
+      margin-bottom: 14.5px;
+    }
   }
 }
 
@@ -72,6 +76,7 @@
 
 .nav-tabs.nav-justified.nav-press {
   > li > a {
+    margin-bottom: 0;
     font-size: 21px;
     text-transform: uppercase;
     color: #fff;
@@ -90,9 +95,20 @@
 }
 
 
+
 //
 // Tabs Press Content
 // --------------------------------------------------
+
+.press-body {
+  padding-top: 48px;
+  padding-bottom: 20px;
+  background: transparent url(../img/press-bg.jpg) no-repeat top left;
+  -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
 
 .panel-excerpt {
   margin-bottom: 28px;
@@ -113,12 +129,22 @@
   }
 
   .panel-body {
-    padding-left: 25px;
+    padding-left: 0;
+    padding-right: 0;
     h2 {
       margin-top: 0;
       margin-bottom: 0;
       font-style: italic;
       color: #52565b;
+    }
+  }
+}
+
+@media (min-width: @screen-sm-max) {
+  .panel-excerpt {
+    .panel-body {
+      padding-left: 25px;
+      padding-right: 15px;
     }
   }
 }
@@ -130,7 +156,7 @@
 
 .cta-calls {
   margin-bottom: @line-height-computed;
-  padding: 5px 0;
+  padding: 8px 0;
   background-color: @gray-lighter;
   
   > p {
@@ -214,11 +240,9 @@
 
   // center the element both horizontally than vertically without knowing width and height
   .press-article-heading {
-    position: absolute;
-    top: 50%;
-    @x: 0;
-    @y: -50%;
-    .translate(@x; @y);
+    position: relative;
+    padding-top: 0;
+    text-align: center;
     margin: 0;
     font-style: italic;
     color: @brand-primary;
@@ -238,6 +262,15 @@
   }
 }
 
+@media (min-width: @screen-sm-max) {
+  .press-article-content .press-article-heading {
+    position: absolute;
+    top: 50%;
+    @x: 0;
+    @y: -50%;
+    .translate(@x; @y);
+  }
+}
 
 //
 // Responsive youtube embed
@@ -326,7 +359,8 @@
   background-color: @footer-bg;
 }
 .site-footer-heading {
-  margin-top: 0;
+  margin-top: @line-height-computed;
+  
   text-transform: uppercase;
   color: #fff;
 }
@@ -339,4 +373,31 @@
   margin-top: 10px;
   font-size: @font-size-small;
   color: @footer-color;
+}
+.footer-logo {
+  display: block;
+  width: 50%;
+}
+.numero-verde {
+  display: block;
+  margin: (@line-height-computed) 0 0 0;
+}
+
+@media (min-width: @screen-sm-max) {
+  .site-footer-heading {
+    margin-top: 0;
+  }
+  .site-footer-copyright {
+    text-align: left;
+  }
+  .footer-logo {
+    display: block;
+    width: 70%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .numero-verde {
+    display: block;
+    margin: 0;
+  }
 }
