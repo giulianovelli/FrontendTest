@@ -49,7 +49,6 @@
 }
 
 
-
 //
 // Jumbotron
 // --------------------------------------------------
@@ -67,22 +66,65 @@
 }
 
 
-
-//== Container sizes
 //
-//## Define the maximum width of `.container` for different screen sizes.
+// Tabs Press
+// --------------------------------------------------
 
-// Small screen / tablet
-@container-tablet:             (640px + @grid-gutter-width);
-//** For `@screen-sm-min` and up.
-@container-sm:                 @container-tablet;
+.nav-tabs.nav-justified.nav-press {
+  > li > a {
+    font-size: 21px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: @brand-primary;
+    border: none;
+    border-radius: 0;
+  }
+  > .active > a  {
+    color: @brand-primary;
+    background-color: #d3c82e;
+    &focus,
+    &:hover {
+      border: none;
+    }
+  }
+}
 
-// Medium screen / desktop
-@container-desktop:            (720px + @grid-gutter-width);
-//** For `@screen-md-min` and up.
-@container-md:                 @container-desktop;
 
-// Large screen / wide desktop
-@container-large-desktop:      (810px + @grid-gutter-width);
-//** For `@screen-lg-min` and up.
-@container-lg:                 @container-large-desktop;
+//
+// Tabs Press Content
+// --------------------------------------------------
+
+.panel-excerpt {
+  margin-bottom: 28px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 0;
+  .box-shadow(none);
+
+  .panel-heading {
+    padding: 14px 0 0 0;
+    background-color: transparent;
+    border: none;
+    img {
+      padding-right: 25px;
+    }
+  }
+
+  .panel-body {
+    padding-left: 25px;
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-style: italic;
+      color: #52565b;
+    }
+  }
+}
+
+
+
+
+
+
