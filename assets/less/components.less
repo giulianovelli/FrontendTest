@@ -12,11 +12,21 @@
   border-width: 0;
 }
 
-// Navbar nav links
-//
-// Builds on top of the `.nav` components with its own modifier class to make
-// the nav the full height of the horizontal nav (above 768px).
+// Default navbar
+.navbar-default {
+  .navbar-toggle {
+    border-color: @navbar-default-toggle-border-color;
+    &:hover,
+    &:focus {
+      background-color: @navbar-default-toggle-hover-bg;
+      .icon-bar {
+        background-color: #fff;
+      }
+    }
+  }
+}
 
+// Navbar nav links
 .navbar-nav {
 
   > li > a {
@@ -36,8 +46,16 @@
  margin: 0;
 }
 
+// Navbar toggle
+//
+// Custom button for toggling the `.navbar-collapse`, powered by the collapse
+// JavaScript plugin.
 
-@media (min-width: @screen-sm-max) {
+.navbar-toggle {
+  border-radius: 0;
+}
+
+@media (min-width: @screen-xs-max) {
   .navbar-btn-right {
     float: right!important; //!important necessary because of bootstrap conventions
     margin-right: -15px; //add negative margin to align with the grid
@@ -45,6 +63,7 @@
     padding-bottom: 8px;
     border-width: 0;
     border-bottom-width: 2px;
+
     &.btn-sm {
       margin-top: 14.5px; // vertical align the buttons with the navbar height
       margin-bottom: 14.5px;
